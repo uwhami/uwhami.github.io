@@ -1,0 +1,12 @@
+{
+  "company": "회사",
+  "role": "직무",
+  "period": "근무 기간",
+  "project": "프로젝트",
+  "project_name": "프로젝트 명",
+  "duration": "프로젝트 기간",
+  "location": "근무지",
+  "responsibilities": "담당 모듈",
+  "technologies": "개발 언어 및 기술",
+  "details": "개발 화면"
+}
