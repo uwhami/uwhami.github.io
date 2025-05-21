@@ -1,0 +1,12 @@
+{
+  "company": "Company",
+  "role": "Role",
+  "period": "Period",
+  "project": "Project",
+  "project_name": "Project Name",
+  "duration": "Project Duration",
+  "location": "Location",
+  "responsibilities": "Responsibilities",
+  "technologies": "Technologies",
+  "details": "Screens / Features"
+}

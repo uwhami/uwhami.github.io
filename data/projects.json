@@ -1,0 +1,30 @@
+[
+  {
+    "title": "설문조사 작성 - Survey Mate Project",
+    "authors": ["김다정", "인지은"],
+    "technologies": [
+      "Spring Boot",
+      "JPA",
+      "Spring Security",
+      "Java",
+      "MariaDB",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Recoil",
+      "AWS EC2",
+      "Tailwind CSS"
+    ],
+    "description": "설문조사 웹 플랫폼으로 사용자들이 설문지를 생성하고 응답을 받을 수 있는 시스템.",
+    "responsibilities": [
+      "프로젝트 초기 백엔드 구조 및 회원가입/로그인 기능 개발",
+      "공통 Exception 핸들링 구조 설계 및 적용",
+      "설문 응답지 작성 기능 및 전반적인 백/프론트 구현",
+      "사용자 그룹 정보 관리 (회원가입 시 그룹정보 입력, 프로필 표시 등)",
+      "프론트엔드 다국어 적용 및 Recoil 기반 글로벌 상태 관리 구축 (알림창, 로딩바 등)",
+      "공통 hook 및 유틸 함수 개발",
+      "AWS EC2 프리티어를 통한 배포 및 DNS 연결"
+    ],
+    "deployment": "AWS EC2 프리티어 + DNS 연결"
+  }
+]
