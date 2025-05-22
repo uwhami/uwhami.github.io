@@ -1,0 +1,33 @@
+{
+  "skills": {
+    "frontend": [
+      "Javascript",
+      "React",
+      "Next.js",
+      "TypeScript"
+    ],
+    "backend": [
+      "Java",
+      "Spring Boot",
+      "MyBatis",
+      "Oracle",
+      "MySQL",
+      "JPA"
+    ],
+    "learning": [
+      "AWS EC2",
+      "Nginx"
+    ],
+    "languages": [
+      {
+        "name": "English",
+        "certificate": "OPIc",
+        "grade": "IH",
+        "description": "Intermediate High",
+        "testDate": "2024.10.06",
+        "serial": "2A9875325419",
+        "detailReport": false
+      }
+    ]
+  }
+}

@@ -80,7 +80,7 @@ export default function Experience() {
 
 
     return (
-        <section id="experience" className="mb-32 scroll-mt-20">
+        <section id="experience" className="mb-25 scroll-mt-20">
             <h3
                 className="text-2xl font-semibold mb-4 text-teal-400 cursor-pointer"
                 onClick={handleToggle}

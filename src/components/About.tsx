@@ -28,7 +28,7 @@ export default function About() {
     }
 
     return (
-        <section id="about" className="mb-32 scroll-mt-20">
+        <section id="about" className="mb-25 scroll-mt-20">
             <h3 className="text-2xl font-semibold mb-4 text-teal-400 cursor-pointer" onClick={handleToggle}>{show ? "▲" : "▼"} {content.title}</h3>
             {show && (<>
                 {content.data.map((paragraph, index) => (

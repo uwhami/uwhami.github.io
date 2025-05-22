@@ -44,7 +44,7 @@ export default function Projects() {
     };
 
     return (
-        <section id="projects" className="mb-32 scroll-mt-20">
+        <section id="projects" className="mb-25 scroll-mt-20">
             <h3
                 className="text-2xl font-semibold mb-4 text-teal-400 cursor-pointer"
                 onClick={handleToggle}
