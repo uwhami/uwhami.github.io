@@ -1,11 +1,10 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
 
-const nextConfig = {
+const nextConfig: NextConfig = {
     output: "export",
-    basePath: isProd ? "/uwhami.github.io" : "",
-    assetPrefix: isProd ? "/uwhami.github.io/" : "",
+    images: { // next/image 사용 시 추가
+        unoptimized: true,
+    },
 };
-
 export default nextConfig;
