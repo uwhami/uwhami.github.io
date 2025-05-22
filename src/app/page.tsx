@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Head from "next/head";
 import Experience from "@/components/Experience";
 import Project from "@/components/Project";
+import About from "@/components/About";
 
 export default function Home() {
     const [mounted, setMounted] = useState(false);
@@ -39,12 +40,7 @@ export default function Home() {
                 </section>
 
                 {/* About Section */}
-                <section id="about" className="mb-32">
-                    <h3 className="text-2xl font-semibold mb-4 text-teal-400">About Me</h3>
-                    <p className="text-gray-300">
-                        This is a short bio about yourself. Replace this with your content. You can mention your background, technologies you like, and goals.
-                    </p>
-                </section>
+                <About />
 
                 {/* Experience Section */}
                 <Experience />
