@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Head from "next/head";
 import Experience from "@/components/Experience";
-import Project from "@/components/Project";
+import Project from "@/components/Projects";
 import About from "@/components/About";
 
 export default function Home() {
