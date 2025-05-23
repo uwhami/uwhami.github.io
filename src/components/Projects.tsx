@@ -78,10 +78,6 @@ export default function Projects() {
                                          alt="Surveymate login"
 
                                     />
-                                    {/*<button*/}
-                                    {/*    className="px-6 py-2 rounded-md bg-white text-black font-semibold shadow cursor-pointer">*/}
-                                    {/*    SURVEY MATE*/}
-                                    {/*</button>*/}
                                 </a>
 
                                 {/* 우측: Live / GitHub 링크 */}
@@ -136,6 +132,15 @@ export default function Projects() {
                                     )}
 
                                 </div>
+                            </div>
+
+                            <div className="mt-2 text-sm text-gray-400">
+                                <strong>Built by :</strong>
+                                {project.members.map((member, idx) => (
+                                    <div key={idx} className="ml-2">
+                                        - {member.name} ({member.role})
+                                    </div>
+                                ))}
                             </div>
 
 
