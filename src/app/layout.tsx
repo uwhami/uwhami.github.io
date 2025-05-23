@@ -31,7 +31,7 @@ export default function RootLayout({
         <div className="bg-gray-900 text-white y-16">
             <header className="fixed top-0 w-full bg-gray-900 bg-opacity-90 z-50 shadow-md">
                 <nav className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-                    <h1 className="text-xl font-bold"><a href="#hero">My Name</a></h1>
+                    <h1 className="text-xl font-bold"><a href="#hero">Dajeong Kim</a></h1>
                     <div className="space-x-4">
                         <a href="#about" className="hover:text-teal-400">About</a>
                         <a href="#experience" className="hover:text-teal-400">Experience</a>

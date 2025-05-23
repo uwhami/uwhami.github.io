@@ -165,7 +165,7 @@ export default function Projects() {
                                             {techList.map((tech, idx) => (
                                                 <span
                                                     key={idx}
-                                                    className="bg-[#21252f] text-teal-300 text-sm px-3 py-1 rounded-full shadow-sm"
+                                                    className="bg-[#21252f] text-teal-300 text-xs px-3 py-1 rounded-full shadow-sm"
                                                 >
                                                    {tech}
                                                 </span>
