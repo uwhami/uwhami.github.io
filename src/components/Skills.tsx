@@ -100,10 +100,10 @@ export default function Skills() {
                                     <HiCalendar className="text-gray-400"/>
                                     시험일: {lang.testDate}
                                 </li>
-                                <li className="flex items-center gap-2">
-                                    <HiDocumentDuplicate className="text-gray-400"/>
-                                    수험번호: {lang.serial}
-                                </li>
+                                {/*<li className="flex items-center gap-2">*/}
+                                {/*    <HiDocumentDuplicate className="text-gray-400"/>*/}
+                                {/*    수험번호: {lang.serial}*/}
+                                {/*</li>*/}
                             </ul>
                         </div>
                     ))}

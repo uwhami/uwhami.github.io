@@ -4,22 +4,11 @@
       "id": 1,
       "title": "설문조사 플랫폼",
       "description": "회원이 설문조사지를 작성하고, 회원/비회원/그룹 권한별로 응답 가능한 설문조사 플랫폼.",
-      "stack": [
-        "Java",
-        "Spring Boot",
-        "JPA",
-        "Spring Security",
-        "JWT",
-        "MariaDB",
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Next.js",
-        "AWS EC2",
-        "REST API",
-        "Git",
-        "Postman"
-      ],
+      "stack": {
+        "Backend": ["Java", "Spring Boot", "JPA", "Spring Security", "JWT", "MariaDB", "REST API"],
+        "Frontend": ["JavaScript", "TypeScript", "React", "Next.js"],
+        "Tools": ["AWS EC2", "Git", "Postman"]
+      },
       "imageUrl": "",
       "liveUrl": "https://djsurveymate.duckdns.org",
       "githubUrl": {
@@ -54,6 +43,16 @@
             "Next.js 기반 설문지 작성 화면 일부 구현",
             "프론트엔드와 API 연동 테스트 및 상태 관리 협업"
           ]
+        }
+      ],
+      "demoAccounts": [
+        {
+          "id": "manager01",
+          "password": "1234"
+        },
+        {
+          "id": "user01",
+          "password": "1234"
         }
       ]
     }

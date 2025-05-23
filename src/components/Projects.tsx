@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {FaGithub} from "react-icons/fa";
 
 interface RoleItem {
     type: string;
@@ -10,11 +11,16 @@ interface MemberItem {
     role: string;
 }
 
+interface AccountItem {
+    id: string;
+    password: string;
+}
+
 interface ProjectItem {
     id: number;
     title: string;
     description: string;
-    stack: string[];
+    stack: { Backend: string[], Frontend: string[], Tools: string[] };
     imageUrl?: string;
     liveUrl: string;
     githubUrl: {
@@ -24,6 +30,7 @@ interface ProjectItem {
     period: string;
     members: MemberItem[];
     role: RoleItem[];
+    demoAccounts: AccountItem[];
 }
 
 export default function Projects() {
@@ -62,14 +69,101 @@ export default function Projects() {
                             </div>
                             <div className="text-gray-300 mt-1">{project.description}</div>
 
-                            <div className="mt-2 text-sm text-gray-400">
-                                <strong>Members :</strong>
-                                {project.members.map((member, idx) => (
-                                    <div key={idx} className="ml-2">
-                                        - {member.name} ({member.role})
+                            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mt-4">
+
+                                {/* 좌측: SURVEY MATE 로고 버튼 */}
+                                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                    <button
+                                        className="px-6 py-2 rounded-md bg-white text-black font-semibold shadow cursor-pointer">
+                                        SURVEY MATE
+                                    </button>
+                                </a>
+
+                                {/* 우측: Live / GitHub 링크 */}
+                                <div className="flex flex-col text-[0.95rem] text-gray-400 gap-1">
+                                    {/* Live 보기 */}
+                                    <a
+                                        href="https://djsurveymate.duckdns.org"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-teal-400 hover:underline flex items-center gap-1"
+                                    >
+                                        👉 <span className="font-medium">Live 서비스 바로가기</span>
+                                    </a>
+
+                                    {/* GitHub 보기 */}
+                                    <div className="flex items-center gap-2">
+                                        <FaGithub size={18} className="text-white"/>
+                                        <a
+                                            href={project.githubUrl.frontend}
+                                            className="text-teal-400 hover:underline"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Frontend
+                                        </a>
+                                        <span className="text-gray-500">|</span>
+                                        <a
+                                            href={project.githubUrl.backend}
+                                            className="text-teal-400 hover:underline"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Backend
+                                        </a>
                                     </div>
-                                ))}
+                                </div>
                             </div>
+
+                            {project.demoAccounts && (
+                                <div className="text-sm text-gray-400 mt-2 space-y-1">
+                                    🔐 <span className="font-semibold text-white">체험용 계정 안내:</span>
+                                    {project.demoAccounts.map((acc, idx) => (
+                                        <div key={idx} className="text-white text-sm">
+                                            ID: <code className="text-teal-300">{acc.id}</code> / PW: <code className="text-teal-300">{acc.password}</code>
+                                        </div>
+                                    ))}
+                                    <div className="mt-1">
+                                        ♣ <span className="text-gray-300">위 계정으로 로그인 후 자유롭게 둘러보세요.</span>
+                                    </div>
+                                </div>
+                            )}
+
+
+
+
+                            {/*<div className="text-sm text-gray-400 mt-2 space-y-1 mb-2">*/}
+                            {/*    <div>*/}
+                            {/*        🔗 <span className="font-semibold text-white font-mediu">Live:</span>{" "}*/}
+                            {/*        <a href={project.liveUrl} className="text-teal-400 hover:underline" target="_blank"*/}
+                            {/*           rel="noopener noreferrer">*/}
+                            {/*            {project.liveUrl}*/}
+                            {/*        </a>*/}
+                            {/*    </div>*/}
+                            {/*    <div>*/}
+                            {/*    <span className="font-semibold text-white font-mediu">Frontend:</span>{" "}*/}
+                            {/*        <a href={project.githubUrl.frontend} className="text-teal-400 hover:underline"*/}
+                            {/*           target="_blank" rel="noopener noreferrer">*/}
+                            {/*            {project.githubUrl.frontend}*/}
+                            {/*        </a>*/}
+                            {/*    </div>*/}
+                            {/*    <div>*/}
+                            {/*        <span className="font-semibold text-white font-mediu">Backend:</span>{" "}*/}
+                            {/*        <a href={project.githubUrl.backend} className="text-teal-400 hover:underline"*/}
+                            {/*           target="_blank" rel="noopener noreferrer">*/}
+                            {/*            {project.githubUrl.backend}*/}
+                            {/*        </a>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+
+                            {/*<div className="mt-2 text-sm text-gray-400">*/}
+                            {/*    <strong>Members :</strong>*/}
+                            {/*    {project.members.map((member, idx) => (*/}
+                            {/*        <div key={idx} className="ml-2">*/}
+                            {/*            - {member.name} ({member.role})*/}
+                            {/*        </div>*/}
+                            {/*    ))}*/}
+                            {/*</div>*/}
 
                             <div className="mt-4">
                                 {project.role.map((role, idx) => (
@@ -84,25 +178,24 @@ export default function Projects() {
                                 ))}
                             </div>
 
-                            <div className="flex flex-wrap gap-2 mt-2">
-                                {project.stack.map((tech, tIdx) => (
-                                    <span
-                                        key={tIdx}
-                                        className="bg-gray-800 text-teal-300 px-3 py-1 text-xs rounded-full"
-                                    >
-                  {tech}
-                </span>
+                            <div className="space-y-4 mt-2 p-4 rounded-lg bg-[#1e293b]/60 border border-gray-700">
+                                {Object.entries(project.stack).map(([category, techList]) => (
+                                    <div key={category}>
+                                        <h5 className="text-sm font-semibold text-gray-400 mb-1">{category}</h5>
+                                        <div className="flex flex-wrap gap-2">
+                                            {techList.map((tech, idx) => (
+                                                <span
+                                                    key={idx}
+                                                    className="bg-gray-800 text-teal-300 px-3 py-1 text-xs rounded-full"
+                                                >
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
                                 ))}
                             </div>
 
-                            <div className="text-sm text-gray-400 mt-2">
-                                🔗 <a href={project.liveUrl} className="text-teal-400 hover:underline"
-                                     target="_blank">Live</a> |
-                                <a href={project.githubUrl.frontend} className="text-teal-400 hover:underline ml-2"
-                                   target="_blank">Frontend</a> |
-                                <a href={project.githubUrl.backend} className="text-teal-400 hover:underline ml-2"
-                                   target="_blank">Backend</a>
-                            </div>
                         </div>
                     </div>
                 ))}
