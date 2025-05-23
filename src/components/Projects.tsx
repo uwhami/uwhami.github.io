@@ -73,10 +73,15 @@ export default function Projects() {
 
                                 {/* 좌측: SURVEY MATE 로고 버튼 */}
                                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                    <button
-                                        className="px-6 py-2 rounded-md bg-white text-black font-semibold shadow cursor-pointer">
-                                        SURVEY MATE
-                                    </button>
+                                    <img src="images/survey-mate-login.png"
+                                         className="w-full max-w-[230px] h-auto"
+                                         alt="Surveymate login"
+
+                                    />
+                                    {/*<button*/}
+                                    {/*    className="px-6 py-2 rounded-md bg-white text-black font-semibold shadow cursor-pointer">*/}
+                                    {/*    SURVEY MATE*/}
+                                    {/*</button>*/}
                                 </a>
 
                                 {/* 우측: Live / GitHub 링크 */}
@@ -112,60 +117,29 @@ export default function Projects() {
                                             Backend
                                         </a>
                                     </div>
+
+                                    <br/>
+
+                                    {project.demoAccounts && (
+                                        <div className="text-sm text-gray-400 mt-2 space-y-1">
+                                            🔐 <span className="font-semibold text-white">체험용 계정 안내:</span>
+                                            {project.demoAccounts.map((acc, idx) => (
+                                                <div key={idx} className="text-white text-sm">
+                                                    ID: <code className="text-teal-300">{acc.id}</code> / PW: <code
+                                                    className="text-teal-300">{acc.password}</code>
+                                                </div>
+                                            ))}
+                                            <div className="mt-1">
+                                                ♣ <span className="text-gray-300">위 계정으로 로그인 후 자유롭게 둘러보세요.</span>
+                                            </div>
+                                        </div>
+                                    )}
+
                                 </div>
                             </div>
 
-                            {project.demoAccounts && (
-                                <div className="text-sm text-gray-400 mt-2 space-y-1">
-                                    🔐 <span className="font-semibold text-white">체험용 계정 안내:</span>
-                                    {project.demoAccounts.map((acc, idx) => (
-                                        <div key={idx} className="text-white text-sm">
-                                            ID: <code className="text-teal-300">{acc.id}</code> / PW: <code className="text-teal-300">{acc.password}</code>
-                                        </div>
-                                    ))}
-                                    <div className="mt-1">
-                                        ♣ <span className="text-gray-300">위 계정으로 로그인 후 자유롭게 둘러보세요.</span>
-                                    </div>
-                                </div>
-                            )}
 
-
-
-
-                            {/*<div className="text-sm text-gray-400 mt-2 space-y-1 mb-2">*/}
-                            {/*    <div>*/}
-                            {/*        🔗 <span className="font-semibold text-white font-mediu">Live:</span>{" "}*/}
-                            {/*        <a href={project.liveUrl} className="text-teal-400 hover:underline" target="_blank"*/}
-                            {/*           rel="noopener noreferrer">*/}
-                            {/*            {project.liveUrl}*/}
-                            {/*        </a>*/}
-                            {/*    </div>*/}
-                            {/*    <div>*/}
-                            {/*    <span className="font-semibold text-white font-mediu">Frontend:</span>{" "}*/}
-                            {/*        <a href={project.githubUrl.frontend} className="text-teal-400 hover:underline"*/}
-                            {/*           target="_blank" rel="noopener noreferrer">*/}
-                            {/*            {project.githubUrl.frontend}*/}
-                            {/*        </a>*/}
-                            {/*    </div>*/}
-                            {/*    <div>*/}
-                            {/*        <span className="font-semibold text-white font-mediu">Backend:</span>{" "}*/}
-                            {/*        <a href={project.githubUrl.backend} className="text-teal-400 hover:underline"*/}
-                            {/*           target="_blank" rel="noopener noreferrer">*/}
-                            {/*            {project.githubUrl.backend}*/}
-                            {/*        </a>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-
-                            {/*<div className="mt-2 text-sm text-gray-400">*/}
-                            {/*    <strong>Members :</strong>*/}
-                            {/*    {project.members.map((member, idx) => (*/}
-                            {/*        <div key={idx} className="ml-2">*/}
-                            {/*            - {member.name} ({member.role})*/}
-                            {/*        </div>*/}
-                            {/*    ))}*/}
-                            {/*</div>*/}
-
-                            <div className="mt-4">
+                            <div className="mt-8">
                                 {project.role.map((role, idx) => (
                                     <div key={idx} className="mb-4">
                                         <div className="text-teal-300 font-medium">{role.type}</div>
@@ -178,17 +152,17 @@ export default function Projects() {
                                 ))}
                             </div>
 
-                            <div className="space-y-4 mt-2 p-4 rounded-lg bg-[#1e293b]/60 border border-gray-700">
+                            <div className="space-y-4 mt-6 p-4 rounded-lg bg-[#1e293b]/60 border border-gray-700">
                                 {Object.entries(project.stack).map(([category, techList]) => (
                                     <div key={category}>
-                                        <h5 className="text-sm font-semibold text-gray-400 mb-1">{category}</h5>
+                                        <h5 className="text-sm font-semibold text-gray-400 mb-2">{category}</h5>
                                         <div className="flex flex-wrap gap-2">
                                             {techList.map((tech, idx) => (
                                                 <span
                                                     key={idx}
-                                                    className="bg-gray-800 text-teal-300 px-3 py-1 text-xs rounded-full"
+                                                    className="bg-[#21252f] text-teal-300 text-sm px-3 py-1 rounded-full shadow-sm"
                                                 >
-                                                    {tech}
+                                                   {tech}
                                                 </span>
                                             ))}
                                         </div>
