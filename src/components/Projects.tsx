@@ -96,21 +96,21 @@ export default function Projects() {
                                     <div className="flex items-center gap-2">
                                         <FaGithub size={18} className="text-white"/>
                                         <a
-                                            href={project.githubUrl.frontend}
-                                            className="text-teal-400 hover:underline"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            Frontend
-                                        </a>
-                                        <span className="text-gray-500">|</span>
-                                        <a
                                             href={project.githubUrl.backend}
                                             className="text-teal-400 hover:underline"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
                                             Backend
+                                        </a>
+                                        <span className="text-gray-500">|</span>
+                                        <a
+                                            href={project.githubUrl.frontend}
+                                            className="text-teal-400 hover:underline"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Frontend
                                         </a>
                                     </div>
 
