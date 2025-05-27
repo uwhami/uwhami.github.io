@@ -126,7 +126,10 @@ export default function Projects() {
                                                 </div>
                                             ))}
                                             <div className="mt-1">
-                                                ♣ <span className="text-gray-300">위 계정으로 로그인 후 자유롭게 둘러보세요.</span>
+                                                <span className="text-gray-300">♣ 위 계정으로 로그인 후 자유롭게 둘러보세요.</span>
+                                                <p><br/></p>
+                                                <p className="text-white underline">※ 현재 EC2 서버에 문제가 발생해 홈페이지 접속이 일시적으로 중단되었습니다.</p>
+                                                <p className="text-white underline">2025년 5월 27일 안으로 복구를 마칠 예정이며, 빠르게 정상화하겠습니다.</p>
                                             </div>
                                         </div>
                                     )}
